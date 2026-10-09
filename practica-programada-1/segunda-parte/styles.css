@@ -1,0 +1,199 @@
+/* Reseteo básico de márgenes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Fondo grisáceo neutro profesional */
+body {
+    background-color: #eef2f5;
+    color: #2d3748;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Barra de Navegación */
+header {
+    width: 100%;
+    background-color: #1a202c; /* Gris oscuro / Antracita elegante */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    list-style: none;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.2rem 1rem;
+}
+
+.navbar a {
+    color: #cbd5e0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+/* Hover y estado activo de enlaces */
+.navbar a:hover,
+.navbar a.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Contenedor Principal */
+.container {
+    width: 90%;
+    max-width: 950px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+/* Tarjeta del Perfil del Doctor */
+.doctor-profile {
+    background-color: #ffffff;
+    padding: 45px 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+/* Etiqueta / Badge flotante opcional */
+.badge {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+/* Nombre del Doctor en azul marino institucional */
+.doctor-name {
+    color: #1b365d;
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+/* Especialidad */
+.doctor-specialty {
+    color: #4a5568;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+/* ID de la Descripción */
+#doctor-description {
+    color: #64748b;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    max-width: 680px;
+    margin: 0 auto 30px auto;
+}
+
+/* Botón de Cita Personalizado */
+.btn-appointment {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #ffffff;
+    border: none;
+    padding: 14px 36px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-appointment:hover {
+    background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
+    transform: translateY(-2px);
+}
+
+.btn-appointment:active {
+    transform: translateY(0);
+}
+
+/* Sección de Comentarios */
+.reviews-section {
+    width: 100%;
+}
+
+.reviews-title {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #334155;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+}
+
+/* Tarjetas de Comentarios */
+.review-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 28px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.review-card h3 {
+    color: #1e293b;
+    margin-bottom: 12px;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.review-card .comment {
+    color: #475569;
+    font-size: 0.93rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.review-card .review-date {
+    color: #94a3b8;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
