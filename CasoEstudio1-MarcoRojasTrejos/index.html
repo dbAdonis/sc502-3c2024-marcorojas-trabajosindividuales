@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Registro de estudiantes y resumen dinámico de notas."
+    />
+    <title>Registro de estudiantes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <p class="eyebrow">Gestión académica</p>
+        <h1>Registro de estudiantes</h1>
+        <p class="subtitle">
+          Administra estudiantes y consulta sus resultados académicos.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="panel" aria-labelledby="form-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Nuevo registro</p>
+            <h2 id="form-title">Agregar estudiante</h2>
+          </div>
+          <span class="section-number" aria-hidden="true">01</span>
+        </div>
+
+        <form id="student-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="first-name">Nombre</label>
+              <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                placeholder="Ej. Ana"
+                autocomplete="given-name"
+                aria-describedby="form-error"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="last-name">Apellidos</label>
+              <input
+                type="text"
+                id="last-name"
+                name="lastName"
+                placeholder="Ej. Vargas Rojas"
+                autocomplete="family-name"
+                aria-describedby="form-error"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="grade">Nota (0 a 100)</label>
+              <input
+                type="number"
+                id="grade"
+                name="grade"
+                placeholder="Ej. 85"
+                min="0"
+                max="100"
+                step="any"
+                inputmode="decimal"
+                aria-describedby="grade-help form-error"
+                required
+              />
+              <small id="grade-help">Se permiten valores entre 0 y 100.</small>
+            </div>
+          </div>
+
+          <div
+            id="form-error"
+            class="message error-message"
+            role="alert"
+            aria-live="polite"
+            hidden
+          ></div>
+          <div
+            id="form-success"
+            class="message success-message"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+
+          <button class="primary-button" type="submit">
+            <span aria-hidden="true">+</span> Agregar estudiante
+          </button>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="table-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Listado general</p>
+            <h2 id="table-title">Estudiantes registrados</h2>
+          </div>
+          <span class="count-badge" id="student-count">3 estudiantes</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <caption class="visually-hidden">
+              Lista de estudiantes y sus notas
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Nota</th>
+              </tr>
+            </thead>
+            <tbody id="student-table-body">
+              <!-- Las filas se generan con JavaScript. -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="legend" aria-label="Leyenda de colores">
+          <span
+            ><span class="legend-dot high-dot" aria-hidden="true"></span> 80 o
+            más</span
+          >
+          <span
+            ><span class="legend-dot low-dot" aria-hidden="true"></span> Menos
+            de 65</span
+          >
+          <span
+            ><span class="legend-dot regular-dot" aria-hidden="true"></span> De
+            65 a menos de 80</span
+          >
+        </div>
+      </section>
+
+      <section class="panel summary-panel" aria-labelledby="summary-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Vista general</p>
+            <h2 id="summary-title">Resumen de notas</h2>
+          </div>
+          <span class="section-number" aria-hidden="true">02</span>
+        </div>
+
+        <div class="summary-grid" aria-live="polite" aria-atomic="true">
+          <article class="summary-card highest-card">
+            <p class="summary-label">Nota más alta</p>
+            <p class="summary-value" id="highest-grade">90</p>
+            <p class="summary-detail" id="highest-student">Maria Mora Perez</p>
+          </article>
+
+          <article class="summary-card average-card">
+            <p class="summary-label">Promedio general</p>
+            <p class="summary-value" id="average-grade">76.00</p>
+            <p class="summary-detail">De todos los estudiantes</p>
+          </article>
+
+          <article class="summary-card lowest-card">
+            <p class="summary-label">Nota más baja</p>
+            <p class="summary-value" id="lowest-grade">60</p>
+            <p class="summary-detail" id="lowest-student">Pedro Sibaja Lopez</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <p>
+        Registro académico · Los datos se mantienen mientras la página esté
+        abierta.
+      </p>
+    </footer>
+  </body>
+</html>
